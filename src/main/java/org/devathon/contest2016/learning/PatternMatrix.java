@@ -148,6 +148,9 @@ public class PatternMatrix {
                     return random.nextBoolean() ? ATTACK : THROW_POTION;
                 }
 
+                case USE_FIREBALL:
+                    return CONSUME_GOLDEN_APPLE;
+
                 default:
                     throw new IllegalArgumentException(name());
             }

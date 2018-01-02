@@ -30,6 +30,7 @@ import org.bukkit.potion.PotionEffectType;
 import org.devathon.contest2016.util.ItemStackUtil;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -62,9 +63,9 @@ public class Options {
 
             new ItemStack(Material.GOLDEN_APPLE, 3),
 
-            ItemStackUtil.makeSplashPotion(Material.SPLASH_POTION, Arrays.asList(new PotionEffect(PotionEffectType.SLOW, 20 * 10, 1))),
-            ItemStackUtil.makeSplashPotion(Material.SPLASH_POTION, Arrays.asList(new PotionEffect(PotionEffectType.WITHER, 20 * 10, 0))),
-            ItemStackUtil.makeSplashPotion(Material.SPLASH_POTION, Arrays.asList(new PotionEffect(PotionEffectType.HARM, 20 * 10, 0))),
+            ItemStackUtil.makeSplashPotion(Material.SPLASH_POTION, Collections.singletonList(new PotionEffect(PotionEffectType.SLOW, 20 * 10, 1))),
+            ItemStackUtil.makeSplashPotion(Material.SPLASH_POTION, Collections.singletonList(new PotionEffect(PotionEffectType.WITHER, 20 * 10, 0))),
+            ItemStackUtil.makeSplashPotion(Material.SPLASH_POTION, Collections.singletonList(new PotionEffect(PotionEffectType.HARM, 20 * 10, 0))),
 
             new ItemStack(Material.FIREBALL, 2),
 
@@ -77,9 +78,14 @@ public class Options {
 
             new ItemStack(Material.GOLDEN_APPLE, 3),
 
-            ItemStackUtil.makeSplashPotion(Material.SPLASH_POTION, Arrays.asList(new PotionEffect(PotionEffectType.SLOW, 20 * 10, 1))),
-            ItemStackUtil.makeSplashPotion(Material.SPLASH_POTION, Arrays.asList(new PotionEffect(PotionEffectType.WITHER, 20 * 10, 0))),
-            ItemStackUtil.makeSplashPotion(Material.SPLASH_POTION, Arrays.asList(new PotionEffect(PotionEffectType.HARM, 20 * 10, 0)))
+            ItemStackUtil.makeSplashPotion(Material.SPLASH_POTION, Collections.singletonList(new PotionEffect(PotionEffectType.SLOW, 20 * 10, 1))),
+            ItemStackUtil.makeSplashPotion(Material.SPLASH_POTION, Collections.singletonList(new PotionEffect(PotionEffectType.WITHER, 20 * 10, 0))),
+            ItemStackUtil.makeSplashPotion(Material.SPLASH_POTION, Collections.singletonList(new PotionEffect(PotionEffectType.HARM, 20 * 10, 0))),
+
+            new ItemStack(Material.FIREBALL, 2),
+
+            new ItemStack(Material.LEATHER_HELMET),
+            new ItemStack(Material.IRON_CHESTPLATE)
     );
 
     private Options() {

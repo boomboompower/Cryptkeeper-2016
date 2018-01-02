@@ -78,6 +78,10 @@ public class NPCRegistry {
         }
     }
 
+    public List<NPCController> getControllers() {
+        return this.controllers;
+    }
+
     public boolean isController(int entityId) {
         for (NPCController npc : controllers) {
             if (npc.isAlive() && npc.getBukkitEntity().getEntityId() == entityId) {

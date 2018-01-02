@@ -91,6 +91,7 @@ while true; do
 
     cd ..
 
+    echo " "
     echo "Rebuilding project.."
     sleep 1
 done

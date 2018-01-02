@@ -39,7 +39,11 @@ import java.util.List;
 public class ItemStackUtil {
 
     public static ItemStack makeCustomItemStack(Material material, String displayName) {
-        ItemStack itemStack = new ItemStack(material);
+        return makeCustomItemStack(material, displayName, 0);
+    }
+
+    public static ItemStack makeCustomItemStack(Material material, String displayName, int damage) {
+        ItemStack itemStack = new ItemStack(material, 1, (byte) damage);
 
         ItemMeta itemMeta = itemStack.getItemMeta();
 

@@ -27,6 +27,7 @@ import net.minecraft.server.v1_10_R1.*;
 import org.bukkit.Location;
 import org.bukkit.craftbukkit.v1_10_R1.CraftWorld;
 import org.bukkit.entity.EntityType;
+import org.bukkit.event.entity.CreatureSpawnEvent;
 import org.devathon.contest2016.util.EntityUtil;
 import org.devathon.contest2016.util.NMSUtil;
 
@@ -47,7 +48,7 @@ public class FakeZombie extends EntityZombie {
         setBaby(false);
         setVillagerType(EnumZombieType.NORMAL);
 
-        world.addEntity(this);
+        world.addEntity(this, CreatureSpawnEvent.SpawnReason.CUSTOM);
     }
 
     @Override

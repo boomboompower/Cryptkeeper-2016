@@ -41,6 +41,7 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.devathon.contest2016.Options;
 import org.devathon.contest2016.Plugin;
+import org.devathon.contest2016.WorldListener;
 import org.devathon.contest2016.learning.PatternMatrix;
 import org.devathon.contest2016.data.ArmorCategory;
 import org.devathon.contest2016.data.SpawnControl;
@@ -96,10 +97,13 @@ public class NPCController {
         if (point.attemptSpawn()) {
             Player target = getTarget();
 
+            target.getActivePotionEffects().clear();
             target.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 10, 255));
             target.getInventory().clear();
 
             Options.KIT_ITEMS.forEach(itemStack -> target.getInventory().addItem(itemStack.clone()));
+
+            WorldListener.updateArmor(target);
 
             target.updateInventory();
 
@@ -245,21 +249,21 @@ public class NPCController {
     private void updateNameTag() {
         Zombie entity = getBukkitEntity();
 
-        String nametag = ChatColor.GREEN.toString();
+        StringBuilder nametag = new StringBuilder(ChatColor.GREEN.toString());
 
         int hearts = (int) Math.ceil(entity.getHealth() / 5D);
 
         for (int i = 0; i < hearts; i++) {
-            nametag += "❤";
+            nametag.append("❤");
         }
 
-        nametag += ChatColor.RED;
+        nametag.append(ChatColor.RED);
 
         for (int i = 0; i < (4 - hearts); i++) {
-            nametag += "❤";
+            nametag.append("❤");
         }
 
-        entity.setCustomName(nametag);
+        entity.setCustomName(nametag.toString());
     }
 
     public void updateEquipment() {
